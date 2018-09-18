@@ -189,7 +189,7 @@
 
         mat4.translate(mvMatrix, mvMatrix, [0.0, 1.0, -7.0])
         mvPushMatrix()
-        mat4.rotate(mvMatrix, mvMatrix, glMatrix.toRadian(rTri), [1.0, 1.0, 0.0])
+        mat4.rotate(mvMatrix, mvMatrix, glMatrix.toRadian(rTri), [1.0, 0.0, 0.0])
         mat4.translate(mvMatrix, mvMatrix, [0.3, 0.0, 0.0])
         gl.bindBuffer(gl.ARRAY_BUFFER, aVertexPositionBuffer)
         gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, aVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0)
@@ -227,7 +227,7 @@
         gl.bindBuffer(gl.ARRAY_BUFFER, dVertexColorBuffer)
         var colors = [];
         for (var i=0; i < dVertexPositionBuffer.numItems; i++) {
-            colors = colors.concat([0.5, 0.5, 1.0, 1.0]);
+            colors = colors.concat([0.5, 0.2, 0.2, 0.8]);
         }
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colors), gl.STATIC_DRAW)
         dVertexColorBuffer.itemSize = 4
